@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedPlant Master – SEE Edition</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-leaf"></div>
+  <header>
+    <h1>🌿 MedPlant Master</h1>
+    <p class="subtitle">SEE Edition • Nepal Class 10 Biology</p>
+    <div class="xp-wrap">
+      <span id="levelBadge">Seed 🌱</span>
+      <div class="xp-bar"><div id="xpFill"></div></div>
+      <small id="xpText">XP: 0</small>
+    </div>
+  </header>
+
+  <main>
+    <section class="panel home-panel" id="homePanel">
+      <h2>Choose Mode</h2>
+      <div class="mode-grid">
+        <button data-mode="quick">🔥 Quick Match</button>
+        <button data-mode="survival">💀 Survival</button>
+        <button data-mode="memory">🧠 Memory Challenge</button>
+        <button data-mode="exam">📝 SEE Exam Simulation</button>
+        <button data-mode="image">🖼 Image Identification</button>
+      </div>
+      <div class="daily" id="dailyChallenge"></div>
+    </section>
+
+    <section class="panel game-panel hidden" id="gamePanel">
+      <div class="game-head">
+        <h2 id="modeTitle">Mode</h2>
+        <div class="hud">
+          <span id="hudScore">Score: 0</span>
+          <span id="hudTimer">⏳ 0</span>
+          <span id="hudLives">❤️ 0</span>
+          <span id="hudStreak">🔥 0</span>
+        </div>
+      </div>
+      <div id="questionBox"></div>
+      <div id="optionsBox" class="options"></div>
+      <div id="typingBox" class="typing hidden"></div>
+      <div class="controls">
+        <button id="nextBtn" class="hidden">Next</button>
+        <button id="exitBtn">Exit to Home</button>
+      </div>
+      <p id="feedback"></p>
+    </section>
+
+    <section class="panel dashboard" id="dashboardPanel">
+      <h2>📊 Progress Dashboard</h2>
+      <div class="stats-grid">
+        <div><h3>Accuracy</h3><p id="accuracyStat">0%</p></div>
+        <div><h3>Most Wrong Plant</h3><p id="mostWrongStat">—</p></div>
+        <div><h3>Strongest Plant</h3><p id="strongStat">—</p></div>
+        <div><h3>Total Games</h3><p id="gamesStat">0</p></div>
+      </div>
+      <h3>🏆 Local Leaderboard</h3>
+      <ol id="leaderboard"></ol>
+    </section>
+  </main>
+
+  <template id="imageQuestionTemplate">
+    <div class="image-card">
+      <div class="img-placeholder" id="plantImage"></div>
+      <p class="image-hint">Identify this plant based on visual hint and known use.</p>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>
